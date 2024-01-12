@@ -1,12 +1,11 @@
 package programita;
 
-import GUI.*;
+import GUI.GUI;
 
 public class Main {
 	public static void main(String[] args) {
 		System.out.print("Cagaste");
-		new MyFrame();
-		new MyPanel();
+		new GUI();
 		
 	}
 

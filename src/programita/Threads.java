@@ -2,21 +2,27 @@ package programita;
 
 import java.awt.Color;
 
-import javax.swing.JFrame;
-
 import GUI.MyFrame;
 
 public class Threads extends Thread {
+	private MyFrame frame;  
+
+    public Threads(MyFrame frame)
+    {
+        this.frame = frame;
+    }
+	
 	@Override
 	public void run() {
 		
 		
-		int timer = (new Variables().getTimer());
-		boolean loop = (new Variables().getRGB());
+		int timer = 1;
+		boolean loop = true;
 		try {
 			
 			while (loop) {
 				for (int i = 0; i <= 255; i++) {
+					
 					frame.getContentPane().setBackground(new Color(255, i, 0));
 					Thread.sleep(timer);
 				}
