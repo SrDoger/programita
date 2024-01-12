@@ -37,7 +37,7 @@ public class MyFrame extends JFrame {
 	public void frameStart() {
 		setResizable(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setLayout(null);
+		//setLayout(null);
 		setVisible(true);
 	}
 	private void closeByTimer(int seconds) {
