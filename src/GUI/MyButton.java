@@ -1,24 +1,26 @@
 package GUI;
 
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 import javax.swing.JButton;
 
 public class MyButton extends JButton {
 
-	private MyFrame MF;
+	private MainFrame MF;
 
-	public MyButton(String texto, MyFrame MF,int action) {
+	public MyButton(String texto, MainFrame MF) {
 		this.MF = MF;
-		setSize(75,20);
+		setSize(75, 20);
 		setText(texto);
 		setVerticalAlignment(CENTER);
 		setHorizontalAlignment(CENTER);
-		eventID(action);
+		
 	}
 
-	public MyButton(int x, int y, int width, int height, String texto, MyFrame MF) {
+	public MyButton(int x, int y, int width, int height, String texto, MainFrame MF) {
 		this.MF = MF;
 		setBounds(x, y, width, height);
 		setText(texto);
@@ -26,23 +28,24 @@ public class MyButton extends JButton {
 		setHorizontalAlignment(CENTER);
 	}
 
-	private void CaseEvent(int option) {
+	private void CaseEvent(int option, List<Component> removeFrame) {
 		switch (option) {
-		case 0: {
-			this.MF.dispose();
+		case 0:
+			this.MF.frame.dispose();
 			break;
-		}
+		case 1:
+			this.MF.closeFrame(removeFrame);
+			break;
 		default:
 			System.out.println("tutifruti");
 		}
 	}
 
-	public void eventID(int event) {
+	public void eventID(int event, List<Component> removeFrame) {
 		addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				CaseEvent(event);
-
+				CaseEvent(event, removeFrame);
 			}
 		});
 	}

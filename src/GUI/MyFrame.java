@@ -40,6 +40,7 @@ public class MyFrame extends JFrame {
 		//setLayout(null);
 		setVisible(true);
 	}
+	
 	private void closeByTimer(int seconds) {
 		Timer timer = new Timer(seconds * 1000, (ActionEvent e) ->
 		{
